@@ -70,8 +70,7 @@ var server = http.createServer(function (req, res) {
                 item = items.add(item.name);
                 res.statusCode = 201;
                 res.end(JSON.stringify(item));
-            }
-            catch(e) {
+            } catch(e) {
                 res.statusCode = 400;
                 responseData = {'message': 'Invalide JSON'};
                 res.end(JSON.stringify(responseData));
@@ -87,9 +86,8 @@ var server = http.createServer(function (req, res) {
                 item = JSON.parse(item);
                 item = items.edit(item);
                 res.statusCode = 201;
-                res.end(item);
-            }
-            catch(e) {
+                res.end(JSON.stringify(item));
+            } catch(e) {
                 res.statusCode = 400;
                 responseData = {'message': 'Invalide JSON'};
                 res.end(JSON.stringify(responseData));
